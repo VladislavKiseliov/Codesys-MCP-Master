@@ -1,6 +1,6 @@
 {
   "name": "codesys-mcp-master",
-  "version": "0.19.0",
+  "version": "0.19.1-ru.1",
   "description": "Codesys-MCP-Master: one MCP server for every installed CODESYS 3.5 version (SP18, SP19, SP21, SP22) with a persistent UI instance, 126 tools and the CODESYS SP22 MCP server's tools alongside. Fork of luke-harriman/Codesys-MCP.",
   "main": "dist/server.js",
   "bin": {
@@ -10,7 +10,9 @@
   "files": [
     "dist/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "INSTALL.ru.md",
+    "harness/"
   ],
   "scripts": {
     "build": "tsc && node -e \"const fs=require('fs');fs.rmSync('dist/scripts',{recursive:true,force:true});fs.cpSync('src/scripts','dist/scripts',{recursive:true})\"",
