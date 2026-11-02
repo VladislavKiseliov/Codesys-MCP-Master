@@ -19,7 +19,9 @@ export interface CodesysInstall {
   additionalFolder?: string;
 }
 
-const VERSION_RE = /^CODESYS\s+(\d+)\.(\d+)\.(\d+)\.(\d+)$/i;
+// The installer appends "(1)", "(2)" when the default folder already exists
+// (seen as "CODESYS 3.5.17.30(1)" on an SP17 machine, 2026-11-02).
+const VERSION_RE = /^CODESYS\s+(\d+)\.(\d+)\.(\d+)\.(\d+)(?:\s*\(\d+\))?$/i;
 
 /**
  * Pick the richest AdditionalFolders installation for an install dir.

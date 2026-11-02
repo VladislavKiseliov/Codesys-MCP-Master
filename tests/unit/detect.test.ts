@@ -53,6 +53,19 @@ describe('detectInstalls', () => {
     expect(installs[0].serverName).toBe('codesys-sp21');
   });
 
+  it('accepts the installer\'s "(1)" folder suffix', () => {
+    const fakeFs = makeFakeFs([
+      {
+        base: 'C:\\Program Files (x86)',
+        entries: ['CODESYS 3.5.17.30(1)', 'CODESYS 3.5.19.20 (2)', 'CODESYS 3.5.21.50(x)'],
+        existsExe: (p) => p.endsWith('CODESYS.exe'),
+      },
+    ]);
+    const installs = detectInstalls(['C:\\Program Files (x86)'], fakeFs);
+    expect(installs.map((i) => i.profileName)).toEqual(['CODESYS V3.5 SP17 Patch 3', 'CODESYS V3.5 SP19 Patch 2']);
+    expect(installs[0].exePath).toContain('CODESYS 3.5.17.30(1)');
+  });
+
   it('skips dirs that do not match CODESYS X.Y.Z.W pattern', () => {
     const fakeFs = makeFakeFs([
       {
