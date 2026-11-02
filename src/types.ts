@@ -105,6 +105,11 @@ export interface ServerConfig extends LauncherConfig {
    */
   ideBridge: 'auto' | 'on' | 'off';
   /**
+   * Which tools to register (see tool-groups.ts); undefined registers every
+   * tool. Fewer tools means fewer schema tokens in every model request.
+   */
+  toolFilter?: import('./tool-groups').ToolFilter;
+  /**
    * Every CODESYS install this server drives. Empty/omitted: just the one
    * given by codesysPath/profileName. bin.ts fills it with every detected
    * install when --codesys-path is not given.

@@ -10,6 +10,7 @@ import { detectInstalls, printConfig, printMultiConfig } from './detect';
 import { InstallSpec, specFromInstall, specFromExplicit, matchInstall } from './installs';
 import { inspectProjectFile, suggestedServerName } from './inspect';
 import { readRunningVersionSsh, formatSshVersionResult } from './ssh-version';
+import { parseToolFilter } from './tool-groups';
 
 let version = '0.1.0';
 try {
@@ -78,6 +79,7 @@ program
     'persistent'
   )
   .option('--no-auto-launch', 'Do not auto-launch CODESYS on startup')
+  .option('--tools <list>', 'Register only these tools: comma-separated presets (core, all), groups (management, project, code, build, tasks, libraries, online, devices, interop, objects, symbols, network, plc-files, nvl, redundancy, release, ide) and single tool names. Default: all tools')
   .option('--fallback-headless', 'Fall back to headless (--noUI) if persistent launch fails. Off by default — opt in only if you genuinely want silent --noUI processes.', false)
   .option('--single-instance', 'Refuse to start a second CODESYS of the same install when one is running that cannot be taken over. Default: start another instance next to it')
   .option('--no-keep-alive', 'Close CODESYS when the server stops. Default: leave it running; the next session takes the running instance over')
@@ -296,6 +298,12 @@ if (opts.sshVersion) {
     liveValuesIntervalMs: clampInterval(opts.liveValuesInterval),
     ideBridge: normaliseIdeBridge(opts.ideBridge),
   };
+  try {
+    config.toolFilter = parseToolFilter(opts.tools);
+  } catch (err) {
+    process.stderr.write(`${(err as Error).message}\n`);
+    process.exit(1);
+  }
 
   process.stderr.write(`Starting CODESYS MCP Server v${version}\n`);
   for (const i of installs) {

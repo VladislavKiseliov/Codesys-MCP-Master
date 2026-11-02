@@ -16,6 +16,7 @@
 | `--single-instance` | Refuse to start a second CODESYS of the same install when one is running that cannot be taken over (the behaviour before 0.20.0). By default another instance starts next to it | off |
 | `--auto-mirror` | Refresh the textual mirror after every modifying tool call (see [auto-mirror.md](auto-mirror.md)) | off |
 | `--timeout <ms>` | Minimum command timeout (tools with a longer one keep theirs) | `180000` |
+| `--tools <list>` | Register only these tools, to cut the schema tokens every model request carries. Comma-separated presets (`core` = management, project, code, build, tasks; `all`), groups (`management`, `project`, `code`, `build`, `tasks`, `libraries`, `online`, `devices`, `interop`, `objects`, `symbols`, `network`, `plc-files`, `nvl`, `redundancy`, `release`, `ide`) and single tool names. Groups are listed in `src/tool-groups.ts` | all tools |
 | `--detect` | List installed CODESYS versions and exit | - |
 | `--print-config` | Print a ready-to-paste `.mcp.json` entry that drives every detected install, and exit (with `--sp`/`--for-project`/`--name`: per-install entries) | - |
 | `--sp <number>` | With `--print-config`: emit only the entry for CODESYS V3.5 SP`<n>` | - |

@@ -1857,6 +1857,9 @@ export async function startMcpServer(config: ServerConfig): Promise<void> {
   const NO_INSTALL_ROUTING = new Set(['launch_codesys_with_project', 'get_user_selection', 'attach_codesys']);
   const s = {
     tool: (name: string, ...rest: any[]) => {
+      // --tools: a filtered-out tool is never registered, so its schema
+      // costs no tokens and the model cannot call it.
+      if (config.toolFilter && !config.toolFilter(name)) return undefined;
       if (NO_INSTALL_ROUTING.has(name) || name.startsWith('ide_')) return rawTool(name, ...rest);
       const handler = rest[rest.length - 1];
       const desc: string | undefined = typeof rest[0] === 'string' ? rest[0] : undefined;
