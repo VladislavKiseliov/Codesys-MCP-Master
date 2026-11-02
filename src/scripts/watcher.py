@@ -26,7 +26,7 @@ IPC_BASE_DIR = r"{IPC_BASE_DIR}"
 COMMANDS_DIR = os.path.join(IPC_BASE_DIR, "commands")
 RESULTS_DIR = os.path.join(IPC_BASE_DIR, "results")
 POLL_INTERVAL = 50  # milliseconds
-WATCHER_VERSION = "0.7.1"
+WATCHER_VERSION = "0.7.2"
 
 # --- Error capture file (written before anything else can fail) ---
 _ERROR_FILE = os.path.join(IPC_BASE_DIR, "watcher_error.txt")
@@ -257,13 +257,20 @@ try:
         _log("Processing command: %s" % request_id)
 
         try:
-            with open(command_path, "r") as f:
+            # src/ipc.ts writes both files as UTF-8. A plain open() in IronPython
+            # 2.7 maps each byte to one char, so every non-ASCII character
+            # (Cyrillic comments, string literals, paths under a non-ASCII
+            # user profile) reached CODESYS as mojibake. Decode explicitly;
+            # utf-8-sig also tolerates a BOM. codecs.open does no newline
+            # translation, and exec() rejects the '\r' of CRLF templates
+            # (a Windows checkout), so normalize line endings as open() did.
+            with codecs.open(command_path, "r", "utf-8-sig") as f:
                 command_data = json.loads(f.read())
             script_path = command_data.get("scriptPath", "")
             if not os.path.exists(script_path):
                 raise IOError("Script file not found: %s" % script_path)
-            with open(script_path, "r") as f:
-                script_code = f.read()
+            with codecs.open(script_path, "r", "utf-8-sig") as f:
+                script_code = f.read().replace(u"\r\n", u"\n").replace(u"\r", u"\n")
         except Exception as read_err:
             _log("Error reading command: %s" % read_err)
             # The message embeds the script path, which can be non-ASCII;
@@ -385,9 +392,11 @@ try:
 
     def _needs_script_context(command_file):
         try:
-            with open(os.path.join(COMMANDS_DIR, command_file), "r") as f:
+            # UTF-8 like process_command: a non-ASCII scriptPath (user
+            # profile) must still resolve.
+            with codecs.open(os.path.join(COMMANDS_DIR, command_file), "r", "utf-8-sig") as f:
                 script_path = json.loads(f.read()).get("scriptPath", "")
-            with open(script_path, "r") as f:
+            with codecs.open(script_path, "r", "utf-8-sig") as f:
                 code = f.read()
                 return "create_online_application(" in code or "create_online_device(" in code
         except Exception:

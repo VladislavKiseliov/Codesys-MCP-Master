@@ -45,9 +45,11 @@ export class HeadlessExecutor implements ScriptExecutor {
     const codesysDir = path.dirname(this.config.codesysPath);
 
     try {
-      // Write script to temp file
+      // Write script to temp file. latin1 cannot encode Cyrillic (Node keeps
+      // the low byte of each char); UTF-8 plus a PEP 263 declaration lets
+      // IronPython decode comments and string literals intact.
       const normalized = scriptContent.replace(/\r\n/g, '\n');
-      fs.writeFileSync(tempFilePath, normalized, 'latin1');
+      fs.writeFileSync(tempFilePath, '# -*- coding: utf-8 -*-\n' + normalized, 'utf-8');
       headlessLog.debug(`Temp script written: ${tempFilePath}`);
 
       // Build command
