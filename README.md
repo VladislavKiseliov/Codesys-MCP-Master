@@ -1,6 +1,7 @@
 # Codesys-MCP-Master
 
-> **Этот форк:** исправлена кириллица (UTF-8), добавлен `--tools` для экономии токенов, поддержка SP17. Установка и работа с DeepSeek Harness — [INSTALL.ru.md](INSTALL.ru.md).
+> **Этот форк:** исправлена кириллица (UTF-8), добавлен `--tools` для экономии токенов, поддержка SP17.
+> **[Руководство: что умеет и как пользоваться](GUIDE.ru.md)** · [Установка для DeepSeek Harness](INSTALL.ru.md) · [Проверка на SP17](tests/live-sp17/SP17-report.md)
 
 One MCP server for every installed CODESYS 3.5 version (SP18, SP19, SP21, SP22; every offline tool live-tested on all four, online tools against a local soft PLC on SP18, SP19 and SP21). Each tool call picks the install from the project file's saved version. It launches CODESYS with its UI visible, keeps it running, and drives it through **132 tools**: project and POU authoring, compile, online/runtime, devices and tasks, symbol configuration, multi-device projects, and a version + git release pipeline. The CODESYS menus stay usable while it is connected, and on SP22 the CODESYS-shipped MCP server's tools are available alongside (`ide_` prefix).
 

@@ -12,6 +12,7 @@
     "README.md",
     "LICENSE",
     "INSTALL.ru.md",
+    "GUIDE.ru.md",
     "harness/"
   ],
   "scripts": {
