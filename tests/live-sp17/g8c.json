@@ -1,0 +1,9 @@
+[
+ {"id":"L","name":"launch_codesys","arguments":{"otherInstances":"leave"}},
+ {"id":"8.4r-0","name":"open_project","arguments":{"filePath":"E:\\Project\\codesys-test\\full\\Full.project"}},
+ {"id":"8.4r-a","name":"set_simulation_mode","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project","enabled":true}},
+ {"id":"8.4r-b","name":"download_to_device","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project","skipReachabilityCheck":true},"max":1500},
+ {"id":"8.4r-c","name":"get_application_state","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project"}},
+ {"id":"8.4r-d","name":"disconnect_from_device","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project"}},
+ {"id":"8.4r-e","name":"set_simulation_mode","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project","enabled":false}}
+]

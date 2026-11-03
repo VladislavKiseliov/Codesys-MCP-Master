@@ -1,0 +1,180 @@
+[
+ {
+  "id": "L",
+  "name": "launch_codesys",
+  "arguments": {
+   "otherInstances": "leave"
+  }
+ },
+ {
+  "id": "8.3",
+  "name": "connect_to_device",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 1200
+ },
+ {
+  "id": "8.4",
+  "name": "download_to_device",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 1200
+ },
+ {
+  "id": "8.5a",
+  "name": "start_stop_application",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "action": "start"
+  }
+ },
+ {
+  "id": "8.5b",
+  "name": "get_application_state",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "8.6",
+  "name": "read_variable",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "variablePath": "PRG_Test.nCycles"
+  }
+ },
+ {
+  "id": "8.7",
+  "name": "read_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "expressions": [
+    "PRG_Test.nCycles",
+    "PRG_Test.bFlag"
+   ]
+  },
+  "max": 800
+ },
+ {
+  "id": "8.8",
+  "name": "monitor_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "expressions": [
+    "PRG_Test.nCycles"
+   ],
+   "durationSeconds": 3
+  },
+  "max": 800
+ },
+ {
+  "id": "8.9a",
+  "name": "write_variable",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "variablePath": "GVL_Test.gnSecond",
+   "value": "42"
+  }
+ },
+ {
+  "id": "8.9b",
+  "name": "read_variable",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "variablePath": "GVL_Test.gnSecond"
+  }
+ },
+ {
+  "id": "8.10",
+  "name": "write_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "assignments": [
+    {
+     "expression": "GVL_Test.gnSecond",
+     "value": "7"
+    },
+    {
+     "expression": "GVL_Test.wsText",
+     "value": "\"Мир\""
+    }
+   ]
+  },
+  "max": 800
+ },
+ {
+  "id": "8.11",
+  "name": "read_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "expressions": [
+    "GVL_Test.gnSecond",
+    "GVL_Test.wsText"
+   ]
+  },
+  "max": 800
+ },
+ {
+  "id": "8.12a",
+  "name": "force_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "assignments": [
+    {
+     "expression": "PRG_Test.bFlag",
+     "value": "TRUE"
+    }
+   ]
+  },
+  "max": 800
+ },
+ {
+  "id": "8.12b",
+  "name": "list_forced_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "8.12c",
+  "name": "unforce_variables",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "8.13",
+  "name": "check_online_change",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "8.14a",
+  "name": "start_stop_application",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "action": "stop"
+  }
+ },
+ {
+  "id": "8.14b",
+  "name": "disconnect_from_device",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "8.15",
+  "name": "set_simulation_mode",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "enabled": false
+  }
+ }
+]

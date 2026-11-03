@@ -1,0 +1,10 @@
+[
+ {"id":"L","name":"launch_codesys","arguments":{"otherInstances":"leave"}},
+ {"id":"4.2r-0","name":"open_project","arguments":{"filePath":"E:\\Project\\codesys-test\\full\\Full.project"}},
+ {"id":"4.2r-a","name":"edit_text_lines","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project","objectPath":"Application/Test/PRG_Test","operations":[{"op":"insert","line":1,"text":"nUnknown := 1;"}]}},
+ {"id":"4.2r-b","name":"compile_project","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project"},"max":800},
+ {"id":"4.2r-c","name":"edit_text_lines","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project","objectPath":"Application/Test/PRG_Test","operations":[{"op":"delete","line":1,"expect":"nUnknown := 1;"}]}},
+ {"id":"4.2r-d","name":"compile_project","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project"},"max":500},
+ {"id":"4.2r-e","name":"close_project","arguments":{"projectFilePath":"E:\\Project\\codesys-test\\full\\Full.project"}},
+ {"id":"4.2r-f","name":"shutdown_codesys","arguments":{}}
+]

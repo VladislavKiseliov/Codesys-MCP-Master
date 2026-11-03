@@ -1,0 +1,105 @@
+[
+ {
+  "id": "L",
+  "name": "launch_codesys",
+  "arguments": {
+   "otherInstances": "leave"
+  }
+ },
+ {
+  "id": "9.1",
+  "name": "export_plcopen_xml",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "exportPath": "E:\\Project\\codesys-test\\full\\export\\Full.xml"
+  }
+ },
+ {
+  "id": "9.2",
+  "name": "export_native",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "destination": "E:\\Project\\codesys-test\\full\\export\\PRG_Test.export",
+   "objectPath": "Application/Test/PRG_Test"
+  }
+ },
+ {
+  "id": "9.3",
+  "name": "mirror_export",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "9.4",
+  "name": "save_project_archive",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "archivePath": "E:\\Project\\codesys-test\\full\\export\\Full.projectarchive"
+  }
+ },
+ {
+  "id": "9.5",
+  "name": "compare_projects",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "otherProjectFilePath": "E:\\Project\\codesys-test\\full\\Кириллица\\Full_копия.project"
+  },
+  "max": 1200
+ },
+ {
+  "id": "10.1",
+  "name": "create_symbol_config",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "10.2",
+  "name": "set_symbol_access",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "signatureFqn": "GVL_Test",
+   "variableName": "gnValue",
+   "access": "ReadWrite"
+  },
+  "max": 800
+ },
+ {
+  "id": "10.3",
+  "name": "list_configured_symbols",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "10.4",
+  "name": "find_symbol_config",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 600
+ },
+ {
+  "id": "11.1",
+  "name": "save_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "11.2",
+  "name": "close_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "11.3",
+  "name": "shutdown_codesys",
+  "arguments": {}
+ }
+]

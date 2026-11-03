@@ -1,0 +1,43 @@
+[
+ {
+  "id": "L",
+  "name": "launch_codesys",
+  "arguments": {
+   "otherInstances": "leave"
+  }
+ },
+ {
+  "id": "8.1a",
+  "name": "add_pou_to_task",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "taskName": "MainTask",
+   "pouName": "PRG_Test"
+  }
+ },
+ {
+  "id": "8.1b",
+  "name": "compile_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "8.2a",
+  "name": "set_simulation_mode",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "enabled": true
+  },
+  "max": 800
+ },
+ {
+  "id": "8.2b",
+  "name": "set_simulation_mode",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ }
+]

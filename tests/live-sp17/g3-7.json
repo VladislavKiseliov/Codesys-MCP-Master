@@ -1,0 +1,369 @@
+[
+ {
+  "id": "L",
+  "name": "launch_codesys",
+  "arguments": {
+   "otherInstances": "leave"
+  }
+ },
+ {
+  "id": "3.1a",
+  "name": "set_pou_code",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "pouPath": "Application/Test/PRG_Test",
+   "declarationCode": "PROGRAM PRG_Test\nVAR\n\tnCycles : INT; // Счётчик циклов\n\tbFlag : BOOL;\nEND_VAR",
+   "implementationCode": "(* Проверка кириллицы: Привет, мир! ёЁ *)\nnCycles := nCycles + 1;\nbFlag := nCycles > 10;\nGVL_Test.gnValue := nCycles;"
+  }
+ },
+ {
+  "id": "3.1b",
+  "name": "get_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test",
+   "part": "declaration"
+  }
+ },
+ {
+  "id": "3.1c",
+  "name": "get_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test",
+   "part": "implementation"
+  }
+ },
+ {
+  "id": "3.2a",
+  "name": "set_pou_code",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "pouPath": "Application/GVL_Test",
+   "declarationCode": "VAR_GLOBAL\n\tgnValue : INT;\n\twsText : WSTRING := \"Привет\";\n\tgnSecond : INT;\nEND_VAR"
+  }
+ },
+ {
+  "id": "3.2b",
+  "name": "get_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/GVL_Test",
+   "part": "declaration"
+  }
+ },
+ {
+  "id": "3.3a",
+  "name": "edit_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test",
+   "operations": [
+    {
+     "op": "insert",
+     "line": 2,
+     "text": "// Комментарий через edit_text_lines"
+    }
+   ]
+  }
+ },
+ {
+  "id": "3.3b",
+  "name": "get_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test"
+  }
+ },
+ {
+  "id": "3.4a",
+  "name": "create_pou",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "name": "PRG_Kirill",
+   "type": "Program",
+   "language": "ST",
+   "parentPath": "Application",
+   "declarationCode": "PROGRAM PRG_Kirill // Создано с кириллицей\nVAR\nEND_VAR"
+  }
+ },
+ {
+  "id": "3.4b",
+  "name": "get_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/PRG_Kirill",
+   "part": "declaration"
+  }
+ },
+ {
+  "id": "3.5",
+  "name": "find_references",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "name": "wsText"
+  },
+  "max": 600
+ },
+ {
+  "id": "3.6",
+  "name": "create_text_list",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "name": "TL_Test",
+   "parentPath": "Application"
+  }
+ },
+ {
+  "id": "3.7a",
+  "name": "save_project_as",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "newPath": "E:\\Project\\codesys-test\\full\\Кириллица\\Full_копия.project"
+  }
+ },
+ {
+  "id": "3.7b",
+  "name": "open_project",
+  "arguments": {
+   "filePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "3.8",
+  "name": "get_all_pou_code",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 2500
+ },
+ {
+  "id": "4.1",
+  "name": "compile_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.2a",
+  "name": "edit_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test",
+   "operations": [
+    {
+     "op": "insert",
+     "line": 1,
+     "text": "nUnknown := 1;"
+    }
+   ]
+  }
+ },
+ {
+  "id": "4.2b",
+  "name": "compile_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.2c",
+  "name": "get_compile_messages",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.3a",
+  "name": "edit_text_lines",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test",
+   "operations": [
+    {
+     "op": "delete",
+     "line": 1,
+     "expect": "nUnknown := 1;"
+    }
+   ]
+  }
+ },
+ {
+  "id": "4.3b",
+  "name": "compile_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.4",
+  "name": "application_build",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "action": "generate_code"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.5a",
+  "name": "clean_all",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "4.5b",
+  "name": "compile_project",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "4.6",
+  "name": "get_build_properties",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "objectPath": "Application/Test/PRG_Test"
+  }
+ },
+ {
+  "id": "5.1",
+  "name": "list_tasks",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "5.2",
+  "name": "create_task",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "taskName": "TestTask"
+  }
+ },
+ {
+  "id": "5.3",
+  "name": "configure_task",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "taskName": "TestTask",
+   "kind": "cyclic",
+   "interval": "50",
+   "intervalUnit": "ms"
+  }
+ },
+ {
+  "id": "5.4a",
+  "name": "add_pou_to_task",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "taskName": "TestTask",
+   "pouName": "PRG_Kirill"
+  }
+ },
+ {
+  "id": "5.4b",
+  "name": "list_tasks",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "5.5a",
+  "name": "remove_pou_from_task",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "taskName": "TestTask",
+   "pouName": "PRG_Kirill"
+  }
+ },
+ {
+  "id": "5.5b",
+  "name": "list_tasks",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "6.1",
+  "name": "get_device_identification",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  }
+ },
+ {
+  "id": "6.2",
+  "name": "list_device_parameters",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 600
+ },
+ {
+  "id": "6.3",
+  "name": "get_plc_settings",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "6.4",
+  "name": "list_device_repository",
+  "arguments": {
+   "nameContains": "Control Win",
+   "limit": 5
+  },
+  "max": 800
+ },
+ {
+  "id": "7.1",
+  "name": "add_library",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "libraryName": "Util"
+  },
+  "max": 800
+ },
+ {
+  "id": "7.2",
+  "name": "list_project_libraries",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "7.3a",
+  "name": "remove_library",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project",
+   "libraryName": "Util"
+  },
+  "max": 800
+ },
+ {
+  "id": "7.3b",
+  "name": "list_project_libraries",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ },
+ {
+  "id": "7.4",
+  "name": "download_missing_libraries",
+  "arguments": {
+   "projectFilePath": "E:\\Project\\codesys-test\\full\\Full.project"
+  },
+  "max": 800
+ }
+]
